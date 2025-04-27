@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Results</title>
+<style>
+#bold {
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+	<!-- Table to display the info of recorded votes in the list -->
+	<table th:each="poll:${pollList}">
+		<tr>
+			<td id="bold">ID:</td>
+			<td th:text="${poll.id}"></td>
+		</tr>
+		<tr>
+			<td id="bold">Title:</td>
+			<td th:text="${poll.title}"><?php echo $title; ?></td>
+		</tr>
+		<tr>
+			<td id="bold">Question:</td>
+			<td th:text="${poll.question}"></td>
+		</tr>
+		<tr>
+			<td id="bold">Answer:</td>
+			<td th:text="${poll.answer}"></td>
+		</tr>
+		<tr>
+			<td id="bold">Votes 1:</td>
+			<td id="vote1" th:text="${poll.vote1}"></td>
+		</tr>
+		<tr>
+			<td id="bold">Votes 2:</td>
+			<td id="vote2" th:text="${poll.vote1}"></td>
+		</tr>
+		<tr>
+			<td id="bold">Votes 3:</td>
+			<td id="vote3" th:text="${poll.vote1}"></td>
+		</tr>
+		<tr>
+			<td id="bold">Date:</td>
+			<td th:text="${poll.dateField}"></td>
+		</tr>
+	</table>
+	<script type="text/javascript" src="answers.js"></script>
+</body>
+</html>

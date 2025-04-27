@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Select the title</title>
+<script type="text/javascript">
+	function goToNewPage() {
+		var url = document.getElementById('list').value;
+		if(url != 'none') {
+			window.location = url;
+		}
+	}
+</script>
+</head>
+<body>
+	<form>
+		<select name="list" id="list" accesskey="target">
+			<option value="none">Choose a title</option>
+			<option th:href="@{'/candy.html'}">Candy</option>
+			<option th:href="@{'/chips.html'}">Chips</option>
+		</select> 
+		<input type="button" name="formSubmit" value="Go" onclick="goToNewPage()" />
+	</form>
+</body>
+</html>

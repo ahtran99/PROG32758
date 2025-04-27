@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Candy</title>
+</head>
+<body>
+	<form action="#" th:action="@{/result}" th:object="${poll}" method="post">
+		<input type="hidden" name="id" th:field="*{id}"/>
+		<select id="answer" th:field="*{answer}">
+			<option value="Smarties">Smarties</option>
+			<option value="Sal Water Taffy">Sal Water Taffy</option>
+			<option value="Candy Canes">Candy Canes</option>
+		</select><br>
+		<!-- Select a date -->
+		<input type="date" th:field="*{dateField}" /><br>
+		<!-- Click to submit -->
+		<input type="submit" onclick="answer()" value="Submit" />
+	</form>
+	
+	<script type="text/javascript" src="answers.js"></script>
+</body>
+</html>
